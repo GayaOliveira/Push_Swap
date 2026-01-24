@@ -6,7 +6,7 @@
 /*   By: gmarinho <gmarinho@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/01/08 20:29:42 by gmarinho          #+#    #+#             */
-/*   Updated: 2026/01/23 19:51:04 by gmarinho         ###   ########.fr       */
+/*   Updated: 2026/01/24 20:04:51 by gmarinho         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -57,5 +57,8 @@ void    reverse_rotate_x(t_stack **head_a, t_stack **head_b, char stack);
 void    sort_3(t_stack **src, t_stack **dest);
 void    send_to_b(t_stack **stack_a, t_stack **stack_b);
 void 	calculate_position(t_stack **head);
+void 	calculate_target_position(t_stack **head_a, t_stack **head_b);
+void 	calculate_cost_b(t_stack **head);
+void 	calculate_cost_a(t_stack **head_a, t_stack **head_b);
 
 #endif

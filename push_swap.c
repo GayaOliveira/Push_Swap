@@ -6,7 +6,7 @@
 /*   By: gmarinho <gmarinho@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/01/08 20:29:53 by gmarinho          #+#    #+#             */
-/*   Updated: 2026/01/23 19:51:33 by gmarinho         ###   ########.fr       */
+/*   Updated: 2026/01/24 20:03:25 by gmarinho         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,11 +19,15 @@ void    print_stack(t_stack *stack)
     temp = stack;
     while (temp)
     {
-        printf("%d (%p) - prev %p - next %p - pos %d\n", temp->value, temp, temp->prev, temp->next, temp->pos);
+        printf("%d (%p) - prev %p - next %p - pos %d - tp %d - ca %d - cb %d\n",
+            temp->value, temp, temp->prev, temp->next, temp->pos, temp->target_pos, temp->cost_a, temp->cost_b);
         temp = temp->next;
     }
     printf("\n");
 }
+
+
+
 
 int main(int argc, char **argv)
 {
@@ -66,7 +70,7 @@ int main(int argc, char **argv)
         b = NULL;
         create_stack_a(&a, numbers, indexes, numbers_size);
         free(numbers);
-        free(indexes);        
+        free(indexes);
         if (numbers_size == 3)
         {
             sort_3(&a, &b);
@@ -77,16 +81,28 @@ int main(int argc, char **argv)
         // rotate_x(&a, &b, 'a');
         // reverse_rotate_x(&a, &b, 'a');
         // push_x(&a, &b, 'b');
-        calculate_position(&a);
+        // calculate_position(&a);
         print_stack(a);  
         print_stack(b);  
-                
-        send_to_b(&a, &b);
+        
+        push_x(&a, &b, 'b');
+        push_x(&a, &b, 'b');
+        // push_x(&a, &b, 'b');
+        // push_x(&a, &b, 'b');
+        // push_x(&a, &b, 'b');
+        // push_x(&a, &b, 'b');
+        // push_x(&a, &b, 'b');
+        // send_to_b(&a, &b);
 
         calculate_position(&a);
         calculate_position(&b);
+        calculate_target_position(&a, &b);
+        calculate_cost_b(&b);
+        calculate_cost_a(&a, &b);
+        
         print_stack(a);  
-        print_stack(b); 
+        print_stack(b);
+
                 
         ft_lstclear(&a);
         ft_lstclear(&b);
@@ -94,3 +110,8 @@ int main(int argc, char **argv)
     }   
     return (0);
 }
+
+/*
+Será que na função calculate_cost_a, vale a pena adicionar alguma forma de 
+checar se o custo deve ser positivo ou negativo para acompanhar cost_b?
+*/
