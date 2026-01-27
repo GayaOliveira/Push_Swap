@@ -1,5 +1,5 @@
 CC = cc
-CFLAGS = -Wall -Werror -Wextra
+CFLAGS = -Wall -Werror -Wextra -g
 NAME = push_swap
 SRCS = push_swap.c ft_atol.c \
 		ft_strdup.c ft_strlen.c \
@@ -27,7 +27,7 @@ OBJS_BONUS = $(SRCS_BONUS:.c=.o)
 all: $(NAME)
 
 $(NAME): $(OBJS)
-	$(CC) $(CFLAGS) $(OBJS) -o $@ -g
+	$(CC) $(CFLAGS) $(OBJS) -o $@
 
 # bonus: $(OBJS) $(OBJS_BONUS)
 # 	ar rcs $(OBJS) $^
