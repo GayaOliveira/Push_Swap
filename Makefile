@@ -13,7 +13,9 @@ SRCS = push_swap.c ft_atol.c \
 		push.c swap.c rotate.c reverse_rotate.c \
 		sort_3.c send_to_b.c \
 		calculate_position.c calculate_target_pos.c \
-		calculate_cost.c
+		calculate_cost.c \
+		get_extremes.c \
+		choose_node_to_move.c
 
 # SRCS_BONUS = ft_lstnew_bonus.c ft_lstadd_front_bonus.c \
 # 			ft_lstsize_bonus.c ft_lstlast_bonus.c \

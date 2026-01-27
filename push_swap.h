@@ -60,5 +60,8 @@ void 	calculate_position(t_stack **head);
 void 	calculate_target_position(t_stack **head_a, t_stack **head_b);
 void 	calculate_cost_b(t_stack **head);
 void 	calculate_cost_a(t_stack **head_a, t_stack **head_b);
+t_stack *get_biggest(t_stack *head);
+t_stack *get_smallest(t_stack *head);
+t_stack *choose_node_to_move(t_stack *head_b);
 
 #endif
