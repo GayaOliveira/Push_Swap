@@ -6,7 +6,7 @@
 /*   By: gmarinho <gmarinho@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/01/13 19:24:32 by gmarinho          #+#    #+#             */
-/*   Updated: 2026/01/23 19:47:29 by gmarinho         ###   ########.fr       */
+/*   Updated: 2026/01/28 15:02:11 by gabrieol         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -25,12 +25,12 @@ void    send_to_b(t_stack **stack_a, t_stack **stack_b)
     i = 0;
     while (i < size && to_push > 0) 
     {
-        if (!((*stack_a)->index <= half) && is_smaller)
-            rotate_x(stack_a, stack_a, 'a');
+        while (!((*stack_a)->index <= half) && is_smaller)
+            rotate_x(stack_a, stack_b, 'a');
         push_x(stack_a, stack_b, 'b');
         to_push--;
         if (to_push == half - 3)
             is_smaller = 0;
         i++;
-    }    
+    }
 }

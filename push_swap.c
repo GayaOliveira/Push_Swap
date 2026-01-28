@@ -134,6 +134,8 @@ int main(int argc, char **argv)
     t_stack *a;
     t_stack *b;
     
+    if (argc < 2)
+        return (1);
     if (argc >= 2)
     {        
         treated_entry = prepare_to_convert(argv, argc - 1);
@@ -172,30 +174,14 @@ int main(int argc, char **argv)
             sort_3(&a, &b);
             return (0);            
         }
-
         send_to_b(&a, &b);
-        // push_x(&a, &b, 'b');
-        // push_x(&a, &b, 'b');
-        // push_x(&a, &b, 'b');
-        // push_x(&a, &b, 'b');
-        // push_x(&a, &b, 'b');
-
-        // printf("%d\n", get_target_pos(&a, &b));
-         
-                      
-        // print_node(choose_node_to_move(b));
-        // move_current_node(&a, &b, choose_node_to_move(b));
-        
+        sort_3(&a, &b);
         position_sort(&a, &b);
-
-        final_rotate(&a, &b);
-
+        final_rotate(&a, &b);        
+        ft_lstclear(&a);
+        ft_lstclear(&b);
         // print_stack(a);
-        // print_stack(b);
-                
-        // ft_lstclear(&a);
-        // ft_lstclear(&b);
-                
+        // print_stack(b);                
     }   
     return (0);
 }

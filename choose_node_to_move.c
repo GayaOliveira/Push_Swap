@@ -42,11 +42,11 @@ t_stack *choose_node_to_move(t_stack *head_b)
 
     to_push = head_b;
     current = head_b;
-    lowest_total_cost = ft_lstsize(head_b);
+    lowest_total_cost = get_total_cost(head_b);
     while (current)
     {
         total_cost = get_total_cost(current);
-        if (lowest_total_cost > total_cost)
+        if (lowest_total_cost >= total_cost)
         {
             lowest_total_cost = total_cost;
             to_push = current;
