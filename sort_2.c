@@ -1,26 +1,21 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   free_array.c                                       :+:      :+:    :+:   */
+/*   sort_2.c                                           :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: gabrieol <gabrieol@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2026/01/13 19:24:32 by gabrieol          #+#    #+#             */
-/*   Updated: 2026/01/29 20:47:47 by gabrieol         ###   ########.fr       */
+/*   Created: 2026/01/29 16:04:36 by gabrieol          #+#    #+#             */
+/*   Updated: 2026/01/29 20:19:36 by gabrieol         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "push_swap.h"
 
-void	free_array(char **arr)
+void	sort_2(int *numbers)
 {
-	int	i;
-
-	i = 0;
-	while (arr[i])
-	{
-		free(arr[i]);
-		i++;
-	}
-	free(arr);
+	if (numbers[0] > numbers[1])
+		write(1, "sa\n", 3);
+	free(numbers);
+	exit(0);
 }

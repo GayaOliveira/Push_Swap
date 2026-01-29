@@ -3,21 +3,21 @@
 /*                                                        :::      ::::::::   */
 /*   arraylen.c                                         :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: gmarinho <gmarinho@student.42.fr>          +#+  +:+       +#+        */
+/*   By: gabrieol <gabrieol@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2026/01/10 18:11:17 by gmarinho          #+#    #+#             */
-/*   Updated: 2026/01/10 18:14:06 by gmarinho         ###   ########.fr       */
+/*   Created: 2026/01/10 18:11:17 by gabrieol          #+#    #+#             */
+/*   Updated: 2026/01/29 20:47:47 by gabrieol         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "push_swap.h"
 
-int arraylen(char **arr)
+int	arraylen(char **arr)
 {
-    int i;
+	int	i;
 
-    i = 0;
-    while (arr[i] != NULL)
-        i++;
-    return (i);
+	i = 0;
+	while (arr[i] != NULL)
+		i++;
+	return (i);
 }

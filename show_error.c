@@ -3,18 +3,18 @@
 /*                                                        :::      ::::::::   */
 /*   show_error.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: gmarinho <gmarinho@student.42.fr>          +#+  +:+       +#+        */
+/*   By: gabrieol <gabrieol@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2026/01/13 19:24:32 by gmarinho          #+#    #+#             */
-/*   Updated: 2026/01/13 19:38:43 by gmarinho         ###   ########.fr       */
+/*   Created: 2026/01/13 19:24:32 by gabrieol          #+#    #+#             */
+/*   Updated: 2026/01/29 20:47:47 by gabrieol         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "push_swap.h"
 
-int show_error(char **arr)
+int	show_error(char **arr)
 {
-    write(2, "Error\n", 6);
-    free_array(arr);
-    return (1);
+	write(2, "Error\n", 6);
+	free_array(arr);
+	exit(1);
 }

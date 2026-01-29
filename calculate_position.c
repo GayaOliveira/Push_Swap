@@ -3,26 +3,26 @@
 /*                                                        :::      ::::::::   */
 /*   calculate_position.c                               :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: gmarinho <gmarinho@student.42.fr>          +#+  +:+       +#+        */
+/*   By: gabrieol <gabrieol@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2026/01/21 20:00:08 by gmarinho          #+#    #+#             */
-/*   Updated: 2026/01/23 19:50:46 by gmarinho         ###   ########.fr       */
+/*   Created: 2026/01/21 20:00:08 by gabrieol          #+#    #+#             */
+/*   Updated: 2026/01/29 20:47:47 by gabrieol         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "push_swap.h"
 
-void calculate_position(t_stack **head)
+void	calculate_position(t_stack **head)
 {
-    int i;
-    t_stack *current;
+	int		i;
+	t_stack	*current;
 
-    i = 0;
-    current = *head;
-    while (current)
-    {        
-        current->pos = i;
-        i++;
-        current = current->next;
-    }    
+	i = 0;
+	current = *head;
+	while (current)
+	{
+		current->pos = i;
+		i++;
+		current = current->next;
+	}
 }

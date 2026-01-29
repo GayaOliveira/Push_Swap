@@ -15,13 +15,14 @@ SRCS = push_swap.c ft_atol.c \
 		calculate_position.c calculate_target_pos.c \
 		calculate_cost.c \
 		get_extremes.c \
-		choose_node_to_move.c
+		choose_node_to_move.c \
+		move_current_node.c \
+		final_rotate.c \
+		position_sort.c \
+		sort_2.c \
+		treat_entry.c sort_list.c
 
-# SRCS_BONUS = ft_lstnew_bonus.c ft_lstadd_front_bonus.c \
-# 			ft_lstsize_bonus.c ft_lstlast_bonus.c \
-# 			ft_lstadd_back_bonus.c ft_lstdelone_bonus.c \
-# 			ft_lstclear_bonus.c ft_lstiter_bonus.c \
-# 			ft_lstmap_bonus.c 
+# SRCS_BONUS =
 
 OBJS = $(SRCS:.c=.o)
 OBJS_BONUS = $(SRCS_BONUS:.c=.o)

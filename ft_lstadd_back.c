@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   ft_lstadd_back.c                                   :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: gmarinho <gmarinho@student.42.fr>          +#+  +:+       +#+        */
+/*   By: gabrieol <gabrieol@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2026/01/19 18:12:56 by gmarinho          #+#    #+#             */
-/*   Updated: 2026/01/20 18:32:36 by gmarinho         ###   ########.fr       */
+/*   Created: 2026/01/19 18:12:56 by gabrieol          #+#    #+#             */
+/*   Updated: 2026/01/29 20:47:47 by gabrieol         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -25,5 +25,5 @@ void	ft_lstadd_back(t_stack **lst, t_stack *new)
 	{
 		last_node->next = new;
 		new->prev = last_node;
-	}	
+	}
 }

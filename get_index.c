@@ -3,65 +3,64 @@
 /*                                                        :::      ::::::::   */
 /*   get_index.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: gmarinho <gmarinho@student.42.fr>          +#+  +:+       +#+        */
+/*   By: gabrieol <gabrieol@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2026/01/14 19:18:15 by gmarinho          #+#    #+#             */
-/*   Updated: 2026/01/19 19:21:42 by gmarinho         ###   ########.fr       */
+/*   Created: 2026/01/14 19:18:15 by gabrieol          #+#    #+#             */
+/*   Updated: 2026/01/29 20:47:47 by gabrieol         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "push_swap.h"
 
-static void bubble_sort(int *numbers, int numbers_size)
+static void	bubble_sort(int *numbers, int numbers_size)
 {
-    int i;
-    int j;
-    int temp;
-    
-    i = 0;
-    while (i < numbers_size)
-    {
-        j = i + 1;
-        while (j < numbers_size )
-        {
-            if (numbers[i] > numbers[j])
-            {
-               temp = numbers[i];
-               numbers[i] = numbers[j];
-               numbers[j] = temp;
-            }
-            j++;
-        }
-        i++;
-    }
-    
+	int	i;
+	int	j;
+	int	temp;
+
+	i = 0;
+	while (i < numbers_size)
+	{
+		j = i + 1;
+		while (j < numbers_size)
+		{
+			if (numbers[i] > numbers[j])
+			{
+				temp = numbers[i];
+				numbers[i] = numbers[j];
+				numbers[j] = temp;
+			}
+			j++;
+		}
+		i++;
+	}
 }
 
-int *get_index(int *numbers, int numbers_size)
+int	*get_index(int *numbers, int numbers_size)
 {
-    int *numbers_cpy;
-    int *indexes;
-    int i;
-    int j;
+	int	*numbers_cpy;
+	int	*indexes;
+	int	i;
+	int	j;
 
-    numbers_cpy = malloc(numbers_size * sizeof(int));
-    indexes = malloc(numbers_size * sizeof(int));
-    if (!indexes || !numbers_cpy)
-        return (NULL);
-    ft_memcpy(numbers_cpy, numbers, numbers_size * sizeof(int));
-    bubble_sort(numbers_cpy, numbers_size);
-    i = 0;
-    while (i < numbers_size)
-    {
-        j = 0;
-        while (j < numbers_size)
-        {
-            if (numbers[i] == numbers_cpy[j])
-                indexes[i] = j + 1;
-            j++;
-        }
-        i++;
-    }    
-    free(numbers_cpy);    
-    return (indexes);
+	numbers_cpy = malloc(numbers_size * sizeof(int));
+	indexes = malloc(numbers_size * sizeof(int));
+	if (!indexes || !numbers_cpy)
+		return (NULL);
+	ft_memcpy(numbers_cpy, numbers, numbers_size * sizeof(int));
+	bubble_sort(numbers_cpy, numbers_size);
+	i = 0;
+	while (i < numbers_size)
+	{
+		j = 0;
+		while (j < numbers_size)
+		{
+			if (numbers[i] == numbers_cpy[j])
+				indexes[i] = j + 1;
+			j++;
+		}
+		i++;
+	}
+	free(numbers_cpy);
+	return (indexes);
 }

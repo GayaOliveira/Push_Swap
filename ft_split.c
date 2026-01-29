@@ -3,16 +3,16 @@
 /*                                                        :::      ::::::::   */
 /*   ft_split.c                                         :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: gmarinho <gmarinho@student.42.fr>          +#+  +:+       +#+        */
+/*   By: gabrieol <gabrieol@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2025/10/25 17:13:00 by gmarinho          #+#    #+#             */
-/*   Updated: 2026/01/23 18:34:15 by gmarinho         ###   ########.fr       */
+/*   Created: 2025/10/25 17:13:00 by gabrieol          #+#    #+#             */
+/*   Updated: 2026/01/29 20:47:47 by gabrieol         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "push_swap.h"
 
-static int	count_words(const char	*str, char c)
+static int	count_words(const char *str, char c)
 {
 	size_t	i;
 	int		count;
@@ -64,7 +64,7 @@ static char	**populate_array(char const *s, char c, char **arr)
 			start = i;
 			while (s[i] && s[i] != c)
 				i++;
-			arr[j] = (char *) malloc((i - start + 1) * sizeof(char));
+			arr[j] = (char *)malloc((i - start + 1) * sizeof(char));
 			if (!is_allocated(arr, j))
 				return (NULL);
 			ft_memcpy(arr[j], s + start, i - start);
@@ -85,7 +85,7 @@ char	**ft_split(char *s, char c)
 	if (s == NULL)
 		return (NULL);
 	n_words = count_words(s, c);
-	array = (char **) malloc((n_words + 1) * sizeof(char *));
+	array = (char **)malloc((n_words + 1) * sizeof(char *));
 	if (array == NULL)
 	{
 		free(array);
@@ -95,27 +95,3 @@ char	**ft_split(char *s, char c)
 	free(s);
 	return (array);
 }
-/*
-#include <stdio.h>
-
-int	main(void)
-{
-	char	str[] = " Admiravel Mundo  Muito Novo  ";
-	//char	*str = NULL;
-	char	c = ' ';
-	int		i = 0;
-	char	**ret;
-	
-	ret = ft_split(str, c);
-	if (ret == NULL)
-		printf("ptr NULL");
-	else
-	{
-		while (ret[i])
-		{
-			printf("%s\n", ret[i]);
-			i++;
-		}
-	}
-}
-*/
