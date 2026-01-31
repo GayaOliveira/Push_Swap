@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   send_to_b.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: gabrieol <gabrieol@student.42.fr>          +#+  +:+       +#+        */
+/*   By: gmarinho <gmarinho@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/01/13 19:24:32 by gabrieol          #+#    #+#             */
-/*   Updated: 2026/01/29 20:47:47 by gabrieol         ###   ########.fr       */
+/*   Updated: 2026/01/31 16:42:20 by gmarinho         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -31,7 +31,7 @@ void	send_to_b(t_stack **stack_a, t_stack **stack_b)
 			rotate_x(stack_a, stack_b, 'a');
 		push_x(stack_a, stack_b, 'b');
 		to_push--;
-		if (to_push == half - 3)
+		if (to_push == size - half - 3)
 			is_smaller = 0;
 		i++;
 	}

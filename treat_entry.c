@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   treat_entry.c                                      :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: gabrieol <gabrieol@student.42.fr>          +#+  +:+       +#+        */
+/*   By: gmarinho <gmarinho@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/01/29 18:35:27 by gabrieol          #+#    #+#             */
-/*   Updated: 2026/01/29 19:59:16 by gabrieol         ###   ########.fr       */
+/*   Updated: 2026/01/31 16:33:07 by gmarinho         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,6 +17,11 @@ int	*treat_entry(char **entry, int args, int *numbers_size)
 	char	**treated_entry;
 	int		*numbers;
 
+	if (ft_strlen(entry[1]) == 0)
+	{
+		write(2, "Error\n", 6);
+		exit(1);
+	}
 	treated_entry = prepare_to_convert(entry, args);
 	*numbers_size = arraylen(treated_entry);
 	if (!is_convertible(treated_entry, *numbers_size))

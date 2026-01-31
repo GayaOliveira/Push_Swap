@@ -31,7 +31,7 @@ O programa recebe como argumento uma lista de inteiros que representam a pilha A
 Exemplos de uso:  
 ./push_swap 2 1 3 6 5 8  
 ARG="4 67 3 87 23"; ./push_swap $ARG
-ARG=(shuf -i 0-10000 -n 500); ./push_swap $ARG    --> passa 500 inteiros aleatórios entre 0 e 10000
+ARG=$(shuf -i 0-10000 -n 500 | tr '\n' ' '); ./push_swap $ARG     --> passa 500 inteiros aleatórios entre 0 e 10000
 
 O programa exibirá uma lista de instruções separadas por uma quebra de linha.
 

@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   push_swap.h                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: gabrieol <gabrieol@student.42.fr>          +#+  +:+       +#+        */
+/*   By: gmarinho <gmarinho@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/01/08 20:29:42 by gabrieol          #+#    #+#             */
-/*   Updated: 2026/01/30 18:58:18 by gabrieol         ###   ########.fr       */
+/*   Updated: 2026/01/31 15:00:18 by gmarinho         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -81,5 +81,6 @@ void				sort_list(int *numbers, int numbers_size, t_stack **a,
 char				*get_next_line(int fd);
 void				clear(char *line, int *numbers, t_stack **a, t_stack **b);
 char				*ft_substr(char const *s, int start, int len);
+void				get_command(t_stack **a, t_stack **b);
 
 #endif

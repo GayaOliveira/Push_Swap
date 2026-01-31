@@ -25,6 +25,7 @@ SRCS = push_swap.c ft_atol.c \
 
 SRCS_BONUS = $(filter-out push_swap.c, $(SRCS)) checker_bonus.c \
 				clear_bonus.c \
+				get_command.c \
 				get_next_line.c \
 				get_next_line_utils.c \
 				ft_strncmp.c \
@@ -38,7 +39,7 @@ $(NAME): $(OBJS)
 	$(CC) $(CFLAGS) $(OBJS) -o $@
 
 bonus: $(OBJS_BONUS)
-	$(CC) $(CFLAGS) $^ -o $(NAME_BONUS)
+	$(CC) $(CFLAGS) $(OBJS_BONUS) -o $(NAME_BONUS)
 
 .o: .c
 	$(CC) $(CFLAGS) -c $< -o $@

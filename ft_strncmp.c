@@ -3,16 +3,16 @@
 /*                                                        :::      ::::::::   */
 /*   ft_strncmp.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: gabrieol <gabrieol@student.42.fr>          +#+  +:+       +#+        */
+/*   By: gmarinho <gmarinho@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/10/27 14:53:58 by gabrieol          #+#    #+#             */
-/*   Updated: 2026/01/30 18:57:39 by gabrieol         ###   ########.fr       */
+/*   Updated: 2026/01/31 16:48:18 by gmarinho         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 int	ft_strncmp(const char *s1, const char *s2, int n)
 {
-	int			i;
+	int				i;
 	unsigned char	*ps1;
 	unsigned char	*ps2;
 
@@ -27,11 +27,3 @@ int	ft_strncmp(const char *s1, const char *s2, int n)
 	}
 	return (ps1[i] - ps2[i]);
 }
-/*#include <stdio.h>
-int main(void)
-{
-	char s1[] = "sus";
-	char s2[] = "sos";
-	
-	printf("%i",ft_strncmp(s1,s2,3));
-}*/
