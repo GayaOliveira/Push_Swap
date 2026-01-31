@@ -1,6 +1,7 @@
 CC = cc
 CFLAGS = -Wall -Werror -Wextra -g
 NAME = push_swap
+NAME_BONUS = checker
 SRCS = push_swap.c ft_atol.c \
 		ft_strdup.c ft_strlen.c \
 		ft_isdigit.c ft_memcpy.c \
@@ -20,9 +21,13 @@ SRCS = push_swap.c ft_atol.c \
 		final_rotate.c \
 		position_sort.c \
 		sort_2.c \
-		treat_entry.c sort_list.c
+		treat_entry.c sort_list.c \
 
-# SRCS_BONUS =
+SRCS_BONUS = $(filter-out push_swap.c, $(SRCS)) checker_bonus.c \
+				clear_bonus.c \
+				get_next_line.c \
+				get_next_line_utils.c \
+				ft_strncmp.c \
 
 OBJS = $(SRCS:.c=.o)
 OBJS_BONUS = $(SRCS_BONUS:.c=.o)
@@ -32,8 +37,8 @@ all: $(NAME)
 $(NAME): $(OBJS)
 	$(CC) $(CFLAGS) $(OBJS) -o $@
 
-# bonus: $(OBJS) $(OBJS_BONUS)
-# 	ar rcs $(OBJS) $^
+bonus: $(OBJS_BONUS)
+	$(CC) $(CFLAGS) $^ -o $(NAME_BONUS)
 
 .o: .c
 	$(CC) $(CFLAGS) -c $< -o $@

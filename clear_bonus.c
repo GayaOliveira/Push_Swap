@@ -1,30 +1,23 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_lstclear_bonus.c                                      :+:      :+:    :+:   */
+/*   clear_bonus.c                                            :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: gabrieol <gabrieol@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2025/11/05 17:51:06 by gabrieol          #+#    #+#             */
-/*   Updated: 2026/01/29 20:47:47 by gabrieol         ###   ########.fr       */
+/*   Created: 2026/01/30 17:40:32 by gabrieol          #+#    #+#             */
+/*   Updated: 2026/01/30 18:53:40 by gabrieol         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "push_swap.h"
 
-void	ft_lstclear(t_stack **lst)
+void	clear(char *line, int *numbers, t_stack **a, t_stack **b)
 {
-	t_stack	*current;
-	t_stack	*next;
-
-	if (!lst)
-		return ;
-	current = *lst;
-	while (current)
-	{
-		next = current->next;
-		free(current);
-		current = next;
-	}
-	*lst = NULL;
+	free(line);
+	if (numbers)
+		free(numbers);
+	ft_lstclear(a);
+	ft_lstclear(b);
+	exit(1);
 }

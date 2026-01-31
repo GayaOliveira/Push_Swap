@@ -6,7 +6,7 @@
 /*   By: gabrieol <gabrieol@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/01/19 21:17:52 by gabrieol          #+#    #+#             */
-/*   Updated: 2026/01/29 20:47:47 by gabrieol         ###   ########.fr       */
+/*   Updated: 2026/01/30 18:14:46 by gabrieol         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -30,16 +30,20 @@ static t_stack	*ft_lstnew(int value, int index, int pos)
 	return (new);
 }
 
-void	create_stack_a(t_stack **a, int *numbers, int *indexes, int size)
+void	create_stack_a(t_stack **a, int *numbers,
+		int numbers_size)
 {
 	int		i;
+	int		*indexes;
 	t_stack	*node;
 
+	indexes = get_index(numbers, numbers_size);
 	i = 0;
-	while (i < size)
+	while (i < numbers_size)
 	{
 		node = ft_lstnew(numbers[i], indexes[i], i);
 		ft_lstadd_back(a, node);
 		i++;
 	}
+	free(indexes);
 }
