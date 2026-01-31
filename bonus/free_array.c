@@ -1,23 +1,26 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   clear_bonus.c                                      :+:      :+:    :+:   */
+/*   free_array.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: gmarinho <gmarinho@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2026/01/30 17:40:32 by gabrieol          #+#    #+#             */
-/*   Updated: 2026/01/31 16:46:34 by gmarinho         ###   ########.fr       */
+/*   Created: 2026/01/13 19:24:32 by gabrieol          #+#    #+#             */
+/*   Updated: 2026/01/31 17:25:05 by gmarinho         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "push_swap.h"
+#include "bonus.h"
 
-void	clear(char *line, int *numbers, t_stack **a, t_stack **b)
+void	free_array(char **arr)
 {
-	free(line);
-	if (numbers)
-		free(numbers);
-	ft_lstclear(a);
-	ft_lstclear(b);
-	exit(1);
+	int	i;
+
+	i = 0;
+	while (arr[i])
+	{
+		free(arr[i]);
+		i++;
+	}
+	free(arr);
 }

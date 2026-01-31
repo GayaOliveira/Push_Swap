@@ -1,28 +1,23 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   calculate_position.c                               :+:      :+:    :+:   */
+/*   clear_bonus.c                                      :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: gmarinho <gmarinho@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2026/01/21 20:00:08 by gabrieol          #+#    #+#             */
-/*   Updated: 2026/01/31 17:19:10 by gmarinho         ###   ########.fr       */
+/*   Created: 2026/01/30 17:40:32 by gabrieol          #+#    #+#             */
+/*   Updated: 2026/01/31 17:25:05 by gmarinho         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "push_swap.h"
+#include "bonus.h"
 
-void	calculate_position(t_stack **head)
+void	clear(char *line, int *numbers, t_stack **a, t_stack **b)
 {
-	int		i;
-	t_stack	*current;
-
-	i = 0;
-	current = *head;
-	while (current)
-	{
-		current->pos = i;
-		i++;
-		current = current->next;
-	}
+	free(line);
+	if (numbers)
+		free(numbers);
+	ft_lstclear(a);
+	ft_lstclear(b);
+	exit(1);
 }

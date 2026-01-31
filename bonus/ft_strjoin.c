@@ -1,28 +1,41 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   calculate_position.c                               :+:      :+:    :+:   */
+/*   ft_strjoin.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: gmarinho <gmarinho@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2026/01/21 20:00:08 by gabrieol          #+#    #+#             */
-/*   Updated: 2026/01/31 17:19:10 by gmarinho         ###   ########.fr       */
+/*   Created: 2025/10/25 11:06:44 by gabrieol          #+#    #+#             */
+/*   Updated: 2026/01/31 17:25:05 by gmarinho         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "push_swap.h"
+#include "bonus.h"
 
-void	calculate_position(t_stack **head)
+char	*ft_strjoin(char *s1, char const *s2)
 {
+	char	*dest;
 	int		i;
-	t_stack	*current;
+	int		len_s1;
+	int		len_s2;
 
+	if (!s1 || !s2)
+		return (NULL);
+	len_s1 = ft_strlen(s1);
+	len_s2 = ft_strlen(s2);
+	dest = (char *)malloc((len_s1 + len_s2 + 1) * sizeof(char));
+	if (!dest)
+		return (NULL);
+	i = -1;
+	while (++i < len_s1)
+		dest[i] = (char)s1[i];
 	i = 0;
-	current = *head;
-	while (current)
+	while (i < len_s2)
 	{
-		current->pos = i;
+		dest[len_s1 + i] = (char)s2[i];
 		i++;
-		current = current->next;
 	}
+	dest[len_s1 + i] = '\0';
+	free(s1);
+	return (dest);
 }

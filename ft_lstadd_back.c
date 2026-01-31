@@ -3,27 +3,27 @@
 /*                                                        :::      ::::::::   */
 /*   ft_lstadd_back.c                                   :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: gabrieol <gabrieol@student.42.fr>          +#+  +:+       +#+        */
+/*   By: gmarinho <gmarinho@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/01/19 18:12:56 by gabrieol          #+#    #+#             */
-/*   Updated: 2026/01/29 20:47:47 by gabrieol         ###   ########.fr       */
+/*   Updated: 2026/01/31 17:21:27 by gmarinho         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "push_swap.h"
 
-void	ft_lstadd_back(t_stack **lst, t_stack *new)
+void	ft_lstadd_back(t_stack **lst, t_stack *new_node)
 {
 	t_stack	*last_node;
 
-	if (!new || !lst)
+	if (!new_node || !lst)
 		return ;
 	last_node = ft_lstlast(*lst);
 	if (!last_node)
-		*lst = new;
+		*lst = new_node;
 	else
 	{
-		last_node->next = new;
-		new->prev = last_node;
+		last_node->next = new_node;
+		new_node->prev = last_node;
 	}
 }

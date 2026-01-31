@@ -1,28 +1,33 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   calculate_position.c                               :+:      :+:    :+:   */
+/*   ft_strdup.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: gmarinho <gmarinho@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2026/01/21 20:00:08 by gabrieol          #+#    #+#             */
-/*   Updated: 2026/01/31 17:19:10 by gmarinho         ###   ########.fr       */
+/*   Created: 2025/10/23 19:04:24 by gabrieol          #+#    #+#             */
+/*   Updated: 2026/01/31 17:25:05 by gmarinho         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "push_swap.h"
+#include "bonus.h"
 
-void	calculate_position(t_stack **head)
+char	*ft_strdup(const char *s)
 {
+	char	*cpy;
+	char	*read;
 	int		i;
-	t_stack	*current;
 
+	cpy = (char *)malloc(ft_strlen(s) * sizeof(char) + 1);
+	if (cpy == NULL)
+		return (NULL);
 	i = 0;
-	current = *head;
-	while (current)
+	read = (char *)s;
+	while (read[i])
 	{
-		current->pos = i;
+		cpy[i] = read[i];
 		i++;
-		current = current->next;
 	}
+	cpy[i] = '\0';
+	return (cpy);
 }

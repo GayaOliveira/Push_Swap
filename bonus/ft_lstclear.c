@@ -1,28 +1,30 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   calculate_position.c                               :+:      :+:    :+:   */
+/*   ft_lstclear.c                                      :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: gmarinho <gmarinho@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2026/01/21 20:00:08 by gabrieol          #+#    #+#             */
-/*   Updated: 2026/01/31 17:19:10 by gmarinho         ###   ########.fr       */
+/*   Created: 2025/11/05 17:51:06 by gabrieol          #+#    #+#             */
+/*   Updated: 2026/01/31 17:25:05 by gmarinho         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "push_swap.h"
+#include "bonus.h"
 
-void	calculate_position(t_stack **head)
+void	ft_lstclear(t_stack **lst)
 {
-	int		i;
 	t_stack	*current;
+	t_stack	*next;
 
-	i = 0;
-	current = *head;
+	if (!lst)
+		return ;
+	current = *lst;
 	while (current)
 	{
-		current->pos = i;
-		i++;
-		current = current->next;
+		next = current->next;
+		free(current);
+		current = next;
 	}
+	*lst = NULL;
 }

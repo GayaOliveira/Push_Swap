@@ -6,11 +6,11 @@
 /*   By: gmarinho <gmarinho@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/01/30 14:33:10 by gabrieol          #+#    #+#             */
-/*   Updated: 2026/01/31 15:03:03 by gmarinho         ###   ########.fr       */
+/*   Updated: 2026/01/31 17:25:05 by gmarinho         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "push_swap.h"
+#include "bonus.h"
 
 int	*check_entry(int argc, char **argv, int *numbers_size)
 {

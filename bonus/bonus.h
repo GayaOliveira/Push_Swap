@@ -1,17 +1,17 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   push_swap.h                                        :+:      :+:    :+:   */
+/*   bonus.h                                            :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: gmarinho <gmarinho@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/01/08 20:29:42 by gabrieol          #+#    #+#             */
-/*   Updated: 2026/01/31 18:00:51 by gmarinho         ###   ########.fr       */
+/*   Updated: 2026/01/31 17:22:49 by gmarinho         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef PUSH_SWAP_H
-# define PUSH_SWAP_H
+#ifndef BONUS_H
+# define BONUS_H
 # include <limits.h>
 # include <stdlib.h>
 # include <unistd.h>
@@ -60,24 +60,10 @@ void				push_x(t_stack **head_1, t_stack **head_2, char stack);
 void				rotate_x(t_stack **head_a, t_stack **head_b, char stack);
 void				reverse_rotate_x(t_stack **head_a, t_stack **head_b,
 						char stack);
-void				sort_3(t_stack **src, t_stack **dest);
-void				sort_2(int *numbers);
-void				send_to_b(t_stack **stack_a, t_stack **stack_b);
-void				calculate_position(t_stack **head);
-void				calculate_target_position(t_stack **head_a,
-						t_stack **head_b);
-void				calculate_cost_b(t_stack **head);
-void				calculate_cost_a(t_stack **head_a, t_stack **head_b);
-t_stack				*get_biggest(t_stack *head);
-t_stack				*get_smallest(t_stack *head);
-t_stack				*choose_node_to_move(t_stack *head_b);
-void				move_current_node(t_stack **head_a, t_stack **head_b,
-						t_stack *node);
-void				final_rotate(t_stack **head_a, t_stack **head_b);
-void				position_sort(t_stack **head_a, t_stack **head_b);
 int					*treat_entry(char **entry, int args, int *numbers_size);
-void				sort_list(int *numbers, int numbers_size, t_stack **a,
-						t_stack **b);
-int					is_sorted(int *numbers, int numbers_size);
+char				*get_next_line(int fd);
+char				*ft_substr(char const *s, int start, int len);
+void				clear(char *line, int *numbers, t_stack **a, t_stack **b);
+void				get_command(t_stack **a, t_stack **b);
 
 #endif

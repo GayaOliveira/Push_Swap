@@ -1,28 +1,29 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   calculate_position.c                               :+:      :+:    :+:   */
+/*   ft_lstadd_back.c                                   :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: gmarinho <gmarinho@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2026/01/21 20:00:08 by gabrieol          #+#    #+#             */
-/*   Updated: 2026/01/31 17:19:10 by gmarinho         ###   ########.fr       */
+/*   Created: 2026/01/19 18:12:56 by gabrieol          #+#    #+#             */
+/*   Updated: 2026/01/31 17:25:05 by gmarinho         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "push_swap.h"
+#include "bonus.h"
 
-void	calculate_position(t_stack **head)
+void	ft_lstadd_back(t_stack **lst, t_stack *new_node)
 {
-	int		i;
-	t_stack	*current;
+	t_stack	*last_node;
 
-	i = 0;
-	current = *head;
-	while (current)
+	if (!new_node || !lst)
+		return ;
+	last_node = ft_lstlast(*lst);
+	if (!last_node)
+		*lst = new_node;
+	else
 	{
-		current->pos = i;
-		i++;
-		current = current->next;
+		last_node->next = new_node;
+		new_node->prev = last_node;
 	}
 }

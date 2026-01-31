@@ -1,28 +1,30 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   calculate_position.c                               :+:      :+:    :+:   */
+/*   ft_memcpy.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: gmarinho <gmarinho@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2026/01/21 20:00:08 by gabrieol          #+#    #+#             */
-/*   Updated: 2026/01/31 17:19:10 by gmarinho         ###   ########.fr       */
+/*   Created: 2025/10/20 20:26:31 by gabrieol          #+#    #+#             */
+/*   Updated: 2026/01/31 17:25:05 by gmarinho         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "push_swap.h"
+#include "bonus.h"
 
-void	calculate_position(t_stack **head)
+void	*ft_memcpy(void *dest, const void *src, size_t n)
 {
-	int		i;
-	t_stack	*current;
+	size_t				i;
+	unsigned char		*temp1;
+	const unsigned char	*temp2;
 
 	i = 0;
-	current = *head;
-	while (current)
+	temp1 = dest;
+	temp2 = src;
+	while (i < n)
 	{
-		current->pos = i;
+		temp1[i] = temp2[i];
 		i++;
-		current = current->next;
 	}
+	return (dest);
 }

@@ -1,41 +1,47 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   push_swap.c                                        :+:      :+:    :+:   */
+/*   rotate.c                                           :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: gmarinho <gmarinho@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/01/08 20:29:53 by gabrieol          #+#    #+#             */
-/*   Updated: 2026/01/31 18:04:47 by gmarinho         ###   ########.fr       */
+/*   Updated: 2026/01/31 17:25:05 by gmarinho         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "push_swap.h"
+#include "bonus.h"
 
-int	main(int argc, char **argv)
+static void	rotate(t_stack **head)
 {
-	int		*numbers;
-	int		numbers_size;
-	t_stack	*a;
-	t_stack	*b;
+	t_stack	*second_node;
+	t_stack	*last_node;
 
-	if (argc < 2)
-		return (1);
-	if (argc >= 2)
+	second_node = (*head)->next;
+	last_node = ft_lstlast(*head);
+	second_node->prev = NULL;
+	last_node->next = *head;
+	(*head)->next = NULL;
+	(*head)->prev = last_node;
+	*head = second_node;
+}
+
+void	rotate_x(t_stack **head_a, t_stack **head_b, char stack)
+{
+	if (stack == 'a')
 	{
-		numbers = treat_entry(argv, argc - 1, &numbers_size);
-		if (numbers_size == 0 || numbers_size == 1)
-		{
-			free(numbers);
-			return (0);
-		}
-		if (is_sorted(numbers, numbers_size))
-			return (0);
-		a = NULL;
-		b = NULL;
-		sort_list(numbers, numbers_size, &a, &b);
-		ft_lstclear(&a);
-		ft_lstclear(&b);
+		rotate(head_a);
+		write(1, "ra\n", 3);
 	}
-	return (0);
+	else if (stack == 'b')
+	{
+		rotate(head_b);
+		write(1, "rb\n", 3);
+	}
+	else
+	{
+		rotate(head_a);
+		rotate(head_b);
+		write(1, "rr\n", 3);
+	}
 }

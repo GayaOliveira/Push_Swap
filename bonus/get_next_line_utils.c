@@ -6,11 +6,11 @@
 /*   By: gmarinho <gmarinho@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/11/20 16:10:18 by gabrieol          #+#    #+#             */
-/*   Updated: 2026/01/31 16:49:39 by gmarinho         ###   ########.fr       */
+/*   Updated: 2026/01/31 17:25:05 by gmarinho         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "push_swap.h"
+#include "bonus.h"
 
 char	*ft_strjoin_gnl(char const *s1, char const *s2)
 {

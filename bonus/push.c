@@ -1,28 +1,52 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   calculate_position.c                               :+:      :+:    :+:   */
+/*   push.c                                             :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: gmarinho <gmarinho@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/01/21 20:00:08 by gabrieol          #+#    #+#             */
-/*   Updated: 2026/01/31 17:19:10 by gmarinho         ###   ########.fr       */
+/*   Updated: 2026/01/31 17:25:05 by gmarinho         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "push_swap.h"
+#include "bonus.h"
 
-void	calculate_position(t_stack **head)
+static void	push(t_stack **src, t_stack **dest)
 {
-	int		i;
-	t_stack	*current;
+	t_stack	*second_node_src;
 
-	i = 0;
-	current = *head;
-	while (current)
+	second_node_src = (*src)->next;
+	if (!(*dest))
 	{
-		current->pos = i;
-		i++;
-		current = current->next;
+		*dest = *src;
+		(*dest)->next = NULL;
+	}
+	else
+	{
+		(*dest)->prev = *src;
+		(*src)->next = *dest;
+		*dest = (*dest)->prev;
+	}
+	if (second_node_src)
+	{
+		second_node_src->prev = NULL;
+		*src = second_node_src;
+	}
+	else
+		*src = NULL;
+}
+
+void	push_x(t_stack **src, t_stack **dest, char stack)
+{
+	if (stack == 'a')
+	{
+		push(dest, src);
+		write(1, "pa\n", 3);
+	}
+	else
+	{
+		push(src, dest);
+		write(1, "pb\n", 3);
 	}
 }
