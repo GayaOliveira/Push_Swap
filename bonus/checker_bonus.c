@@ -3,29 +3,14 @@
 /*                                                        :::      ::::::::   */
 /*   checker_bonus.c                                    :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: gabrieol <gabrieol@student.42.fr>          +#+  +:+       +#+        */
+/*   By: gmarinho <gmarinho@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2026/01/30 14:33:10 by gabrieol          #+#    #+#             */
-/*   Updated: 2026/02/02 15:03:32 by gabrieol         ###   ########.fr       */
+/*   Created: 2026/01/30 14:33:10 by gmarinho          #+#    #+#             */
+/*   Updated: 2026/02/02 19:09:22 by gmarinho         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "bonus.h"
-
-int	*check_entry(int argc, char **argv, int *numbers_size)
-{
-	int	*numbers;
-
-	if (argc < 2)
-		return (NULL);
-	numbers = treat_entry(argv, argc - 1, numbers_size);
-	if (*numbers_size <= 1)
-	{
-		free(numbers);
-		exit(0);
-	}
-	return (numbers);
-}
+#include "checker_bonus.h"
 
 static int	is_sorted(t_stack *a)
 {
@@ -55,14 +40,18 @@ int	main(int argc, char **argv)
 	t_stack	*a;
 	t_stack	*b;
 
-	numbers = check_entry(argc, argv, &numbers_size);
-	if (!numbers)
-		return (0);
+	if (argc < 2)
+		return (1);
+	numbers = treat_entry(argv, argc - 1, &numbers_size);
+	if (numbers_size <= 1)
+	{
+		free(numbers);
+		exit(0);
+	}
 	a = NULL;
 	b = NULL;
 	create_stack_a(&a, numbers, numbers_size);
 	get_command(&a, &b);
-	free(numbers);
 	exit_write(a, b);
 	ft_lstclear(&a);
 	ft_lstclear(&b);

@@ -1,23 +1,33 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   arraylen.c                                         :+:      :+:    :+:   */
+/*   ft_strchr_bonus.c                                  :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: gabrieol <gabrieol@student.42.fr>          +#+  +:+       +#+        */
+/*   By: gmarinho <gmarinho@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2026/01/10 18:11:17 by gabrieol          #+#    #+#             */
-/*   Updated: 2026/02/02 15:03:32 by gabrieol         ###   ########.fr       */
+/*   Created: 2026/01/31 18:49:16 by gmarinho          #+#    #+#             */
+/*   Updated: 2026/02/02 18:43:25 by gmarinho         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "bonus.h"
+#include "checker_bonus.h"
 
-int	arraylen(char **arr)
+char	*ft_strchr(const char *s, int c)
 {
-	int	i;
+	char	*occ;
+	int		i;
 
 	i = 0;
-	while (arr[i] != NULL)
+	while (s[i])
+	{
+		if (s[i] == (unsigned char)c)
+		{
+			occ = (char *)&s[i];
+			return (occ);
+		}
 		i++;
-	return (i);
+	}
+	if (c == '\0')
+		return ((char *)&s[i]);
+	return (NULL);
 }

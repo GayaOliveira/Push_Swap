@@ -1,30 +1,20 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_lstclear.c                                      :+:      :+:    :+:   */
+/*   show_error_bonus.c                                 :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: gabrieol <gabrieol@student.42.fr>          +#+  +:+       +#+        */
+/*   By: gmarinho <gmarinho@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2025/11/05 17:51:06 by gabrieol          #+#    #+#             */
-/*   Updated: 2026/02/02 15:03:32 by gabrieol         ###   ########.fr       */
+/*   Created: 2026/01/13 19:24:32 by gmarinho          #+#    #+#             */
+/*   Updated: 2026/02/02 18:43:25 by gmarinho         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "bonus.h"
+#include "checker_bonus.h"
 
-void	ft_lstclear(t_stack **lst)
+int	show_error(char **arr)
 {
-	t_stack	*current;
-	t_stack	*next;
-
-	if (!lst)
-		return ;
-	current = *lst;
-	while (current)
-	{
-		next = current->next;
-		free(current);
-		current = next;
-	}
-	*lst = NULL;
+	write(2, "Error\n", 6);
+	free_array(arr);
+	exit(1);
 }

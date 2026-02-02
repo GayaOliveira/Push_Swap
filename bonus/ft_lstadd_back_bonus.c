@@ -1,16 +1,16 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_lstadd_back.c                                   :+:      :+:    :+:   */
+/*   ft_lstadd_back_bonus.c                             :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: gabrieol <gabrieol@student.42.fr>          +#+  +:+       +#+        */
+/*   By: gmarinho <gmarinho@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2026/01/19 18:12:56 by gabrieol          #+#    #+#             */
-/*   Updated: 2026/02/02 15:03:32 by gabrieol         ###   ########.fr       */
+/*   Created: 2026/01/19 18:12:56 by gmarinho          #+#    #+#             */
+/*   Updated: 2026/02/02 18:43:25 by gmarinho         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "bonus.h"
+#include "checker_bonus.h"
 
 void	ft_lstadd_back(t_stack **lst, t_stack *new_node)
 {

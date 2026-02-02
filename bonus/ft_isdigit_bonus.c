@@ -1,20 +1,18 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   show_error.c                                       :+:      :+:    :+:   */
+/*   ft_isdigit.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: gabrieol <gabrieol@student.42.fr>          +#+  +:+       +#+        */
+/*   By: gmarinho <gmarinho@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2026/01/13 19:24:32 by gabrieol          #+#    #+#             */
-/*   Updated: 2026/02/02 15:03:32 by gabrieol         ###   ########.fr       */
+/*   Created: 2025/10/20 17:27:05 by gmarinho          #+#    #+#             */
+/*   Updated: 2026/01/31 18:41:39 by gmarinho         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "bonus.h"
-
-int	show_error(char **arr)
+int	ft_isdigit(int c)
 {
-	write(2, "Error\n", 6);
-	free_array(arr);
-	exit(1);
+	if (c >= '0' && c <= '9')
+		return (1);
+	return (0);
 }

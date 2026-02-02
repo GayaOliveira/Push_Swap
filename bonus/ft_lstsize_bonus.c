@@ -1,30 +1,26 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_memcpy.c                                        :+:      :+:    :+:   */
+/*   ft_lstsize_bonus.c                                 :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: gabrieol <gabrieol@student.42.fr>          +#+  +:+       +#+        */
+/*   By: gmarinho <gmarinho@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2025/10/20 20:26:31 by gabrieol          #+#    #+#             */
-/*   Updated: 2026/02/02 15:03:32 by gabrieol         ###   ########.fr       */
+/*   Created: 2025/11/05 17:08:54 by gmarinho          #+#    #+#             */
+/*   Updated: 2026/02/02 18:43:25 by gmarinho         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "bonus.h"
+#include "checker_bonus.h"
 
-void	*ft_memcpy(void *dest, const void *src, size_t n)
+int	ft_lstsize(t_stack *lst)
 {
-	size_t				i;
-	unsigned char		*temp1;
-	const unsigned char	*temp2;
+	int	count;
 
-	i = 0;
-	temp1 = dest;
-	temp2 = src;
-	while (i < n)
+	count = 0;
+	while (lst)
 	{
-		temp1[i] = temp2[i];
-		i++;
+		lst = lst->next;
+		count++;
 	}
-	return (dest);
+	return (count);
 }

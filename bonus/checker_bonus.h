@@ -1,17 +1,17 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   bonus.h                                            :+:      :+:    :+:   */
+/*   checker_bonus.h                                    :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: gabrieol <gabrieol@student.42.fr>          +#+  +:+       +#+        */
+/*   By: gmarinho <gmarinho@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2026/01/08 20:29:42 by gabrieol          #+#    #+#             */
-/*   Updated: 2026/02/02 15:03:32 by gabrieol         ###   ########.fr       */
+/*   Created: 2026/01/08 20:29:42 by gmarinho          #+#    #+#             */
+/*   Updated: 2026/02/02 19:10:59 by gmarinho         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef BONUS_H
-# define BONUS_H
+#ifndef CHECKER_BONUS_H
+# define CHECKER_BONUS_H
 # include <limits.h>
 # include <stdlib.h>
 # include <unistd.h>
@@ -38,8 +38,8 @@ long				ft_atol(const char *nptr);
 int					ft_strlen(const char *str);
 char				*ft_strdup(const char *s);
 char				*ft_strjoin(char *s1, char const *s2);
-char				*ft_strjoin_get(char *s1, char *s2);
-char				*ft_strjoin_gnl(char const *s1, char const *s2);
+char				*ft_strnjoin(char *s1, char const *s2, int n);
+char				*ft_strchr(const char *s, int c);
 void				*ft_memcpy(void *dest, const void *src, size_t n);
 char				**ft_split(char *s, char c);
 int					arraylen(char **arr);
@@ -62,7 +62,6 @@ void				reverse_rotate_x(t_stack **head_a, t_stack **head_b,
 						char stack);
 int					*treat_entry(char **entry, int args, int *numbers_size);
 char				*get_next_line(int fd);
-char				*ft_substr(char const *s, int start, int len);
 void				clear(char *line, int *numbers, t_stack **a, t_stack **b);
 void				get_command(t_stack **a, t_stack **b);
 

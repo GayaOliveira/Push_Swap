@@ -1,21 +1,22 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_strlen.c                                        :+:      :+:    :+:   */
+/*   ft_lstlast_bonus.c                                 :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: gabrieol <gabrieol@student.42.fr>          +#+  +:+       +#+        */
+/*   By: gmarinho <gmarinho@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2025/10/20 18:02:48 by gabrieol          #+#    #+#             */
-/*   Updated: 2026/01/29 20:47:47 by gabrieol         ###   ########.fr       */
+/*   Created: 2025/11/05 18:39:13 by gmarinho          #+#    #+#             */
+/*   Updated: 2026/02/02 18:43:25 by gmarinho         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-int	ft_strlen(const char *str)
-{
-	int	i;
+#include "checker_bonus.h"
 
-	i = 0;
-	while (str[i])
-		i++;
-	return (i);
+t_stack	*ft_lstlast(t_stack *lst)
+{
+	if (!lst)
+		return (NULL);
+	while (lst->next)
+		lst = lst->next;
+	return (lst);
 }

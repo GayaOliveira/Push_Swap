@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   create_stack_a.c                                   :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: gabrieol <gabrieol@student.42.fr>          +#+  +:+       +#+        */
+/*   By: gmarinho <gmarinho@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2026/01/19 21:17:52 by gabrieol          #+#    #+#             */
-/*   Updated: 2026/01/30 18:14:46 by gabrieol         ###   ########.fr       */
+/*   Created: 2026/01/19 21:17:52 by gmarinho          #+#    #+#             */
+/*   Updated: 2026/02/02 18:57:53 by gmarinho         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -30,8 +30,7 @@ static t_stack	*ft_lstnew(int value, int index, int pos)
 	return (new);
 }
 
-void	create_stack_a(t_stack **a, int *numbers,
-		int numbers_size)
+void	create_stack_a(t_stack **a, int *numbers, int numbers_size)
 {
 	int		i;
 	int		*indexes;
@@ -46,4 +45,5 @@ void	create_stack_a(t_stack **a, int *numbers,
 		i++;
 	}
 	free(indexes);
+	free(numbers);
 }

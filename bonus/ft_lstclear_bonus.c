@@ -1,26 +1,30 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_lstsize.c                                       :+:      :+:    :+:   */
+/*   ft_lstclear_bonus.c                                :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: gabrieol <gabrieol@student.42.fr>          +#+  +:+       +#+        */
+/*   By: gmarinho <gmarinho@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2025/11/05 17:08:54 by gabrieol          #+#    #+#             */
-/*   Updated: 2026/02/02 15:03:32 by gabrieol         ###   ########.fr       */
+/*   Created: 2025/11/05 17:51:06 by gmarinho          #+#    #+#             */
+/*   Updated: 2026/02/02 18:43:25 by gmarinho         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "bonus.h"
+#include "checker_bonus.h"
 
-int	ft_lstsize(t_stack *lst)
+void	ft_lstclear(t_stack **lst)
 {
-	int	count;
+	t_stack	*current;
+	t_stack	*next;
 
-	count = 0;
-	while (lst)
+	if (!lst)
+		return ;
+	current = *lst;
+	while (current)
 	{
-		lst = lst->next;
-		count++;
+		next = current->next;
+		free(current);
+		current = next;
 	}
-	return (count);
+	*lst = NULL;
 }

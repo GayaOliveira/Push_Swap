@@ -1,18 +1,21 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_isdigit.c                                       :+:      :+:    :+:   */
+/*   ft_strlen.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: gabrieol <gabrieol@student.42.fr>          +#+  +:+       +#+        */
+/*   By: gmarinho <gmarinho@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2025/10/20 17:27:05 by gabrieol          #+#    #+#             */
-/*   Updated: 2026/01/29 20:47:47 by gabrieol         ###   ########.fr       */
+/*   Created: 2025/10/20 18:02:48 by gmarinho          #+#    #+#             */
+/*   Updated: 2026/02/02 18:07:58 by gmarinho         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-int	ft_isdigit(int c)
+int	ft_strlen(const char *str)
 {
-	if (c >= '0' && c <= '9')
-		return (1);
-	return (0);
+	int	i;
+
+	i = 0;
+	while (str[i])
+		i++;
+	return (i);
 }

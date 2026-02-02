@@ -1,26 +1,33 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   free_array.c                                       :+:      :+:    :+:   */
+/*   ft_strdup_bonus.c                                  :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: gabrieol <gabrieol@student.42.fr>          +#+  +:+       +#+        */
+/*   By: gmarinho <gmarinho@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2026/01/13 19:24:32 by gabrieol          #+#    #+#             */
-/*   Updated: 2026/02/02 15:03:32 by gabrieol         ###   ########.fr       */
+/*   Created: 2025/10/23 19:04:24 by gmarinho          #+#    #+#             */
+/*   Updated: 2026/02/02 18:43:25 by gmarinho         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "bonus.h"
+#include "checker_bonus.h"
 
-void	free_array(char **arr)
+char	*ft_strdup(const char *s)
 {
-	int	i;
+	char	*cpy;
+	char	*read;
+	int		i;
 
+	cpy = (char *)malloc(ft_strlen(s) * sizeof(char) + 1);
+	if (cpy == NULL)
+		return (NULL);
 	i = 0;
-	while (arr[i])
+	read = (char *)s;
+	while (read[i])
 	{
-		free(arr[i]);
+		cpy[i] = read[i];
 		i++;
 	}
-	free(arr);
+	cpy[i] = '\0';
+	return (cpy);
 }

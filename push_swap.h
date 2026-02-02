@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   push_swap.h                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: gabrieol <gabrieol@student.42.fr>          +#+  +:+       +#+        */
+/*   By: gmarinho <gmarinho@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2026/01/08 20:29:42 by gabrieol          #+#    #+#             */
-/*   Updated: 2026/02/02 15:03:32 by gabrieol         ###   ########.fr       */
+/*   Created: 2026/01/08 20:29:42 by gmarinho          #+#    #+#             */
+/*   Updated: 2026/02/02 18:42:11 by gmarinho         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,10 +15,6 @@
 # include <limits.h>
 # include <stdlib.h>
 # include <unistd.h>
-
-# ifndef BUFFER_SIZE
-#  define BUFFER_SIZE 42
-# endif
 
 typedef struct s_stack
 {

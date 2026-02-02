@@ -1,33 +1,30 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_strdup.c                                        :+:      :+:    :+:   */
+/*   ft_memcpy_bonus.c                                  :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: gabrieol <gabrieol@student.42.fr>          +#+  +:+       +#+        */
+/*   By: gmarinho <gmarinho@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2025/10/23 19:04:24 by gabrieol          #+#    #+#             */
-/*   Updated: 2026/02/02 15:03:32 by gabrieol         ###   ########.fr       */
+/*   Created: 2025/10/20 20:26:31 by gmarinho          #+#    #+#             */
+/*   Updated: 2026/02/02 18:43:25 by gmarinho         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "bonus.h"
+#include "checker_bonus.h"
 
-char	*ft_strdup(const char *s)
+void	*ft_memcpy(void *dest, const void *src, size_t n)
 {
-	char	*cpy;
-	char	*read;
-	int		i;
+	size_t				i;
+	unsigned char		*temp1;
+	const unsigned char	*temp2;
 
-	cpy = (char *)malloc(ft_strlen(s) * sizeof(char) + 1);
-	if (cpy == NULL)
-		return (NULL);
 	i = 0;
-	read = (char *)s;
-	while (read[i])
+	temp1 = dest;
+	temp2 = src;
+	while (i < n)
 	{
-		cpy[i] = read[i];
+		temp1[i] = temp2[i];
 		i++;
 	}
-	cpy[i] = '\0';
-	return (cpy);
+	return (dest);
 }

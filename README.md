@@ -1,4 +1,4 @@
-*This project has been created as part of the 42 curriculum by gabrieol.*
+*This project has been created as part of the 42 curriculum by gmarinho.*
 
 # Descrição
 
@@ -73,7 +73,7 @@ As operações permitidas para manipular as pilhas incluem:
 
 - Rotacionar ao contrário (Reverse Rotate): rra, rrb, rrr (desloca todos os elementos para baixo; o último vira o primeiro).
 
-OBS: o último caractere das operações se refere à pilha em que é aplicado, sendo que o 'r' indica a operação aplicada em ambas as pilhas ao mesmo tempo.
+OBS: o último caractere das operações se refere à pilha em que é aplicado, sendo que o 'r' e o 's' indicam a operação aplicada em ambas as pilhas ao mesmo tempo.
 
 ## Benchmark (Metas de Desempenho)
 

@@ -3,14 +3,14 @@
 /*                                                        :::      ::::::::   */
 /*   get_command.c                                      :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: gabrieol <gabrieol@student.42.fr>          +#+  +:+       +#+        */
+/*   By: gmarinho <gmarinho@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2026/01/31 16:50:50 by gabrieol          #+#    #+#             */
-/*   Updated: 2026/01/31 16:50:50 by gabrieol         ###   ########.fr       */
+/*   Created: 2026/01/31 16:50:50 by gmarinho          #+#    #+#             */
+/*   Updated: 2026/01/31 16:50:50 by gmarinho         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "bonus.h"
+#include "checker_bonus.h"
 
 static int	exec_command(char *line, t_stack **a, t_stack **b)
 {

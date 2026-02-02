@@ -1,27 +1,39 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   treat_entry.c                                      :+:      :+:    :+:   */
+/*   treat_entry_bonus.c                                :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: gabrieol <gabrieol@student.42.fr>          +#+  +:+       +#+        */
+/*   By: gmarinho <gmarinho@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2026/01/29 18:35:27 by gabrieol          #+#    #+#             */
-/*   Updated: 2026/02/02 15:03:32 by gabrieol         ###   ########.fr       */
+/*   Created: 2026/01/29 18:35:27 by gmarinho          #+#    #+#             */
+/*   Updated: 2026/02/02 19:10:06 by gmarinho         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "bonus.h"
+#include "checker_bonus.h"
+
+static void	is_empty_string(char **entry, int args)
+{
+	int	i;
+
+	i = 1;
+	while (i < args)
+	{
+		if (ft_strlen(entry[i]) == 0)
+		{
+			write(2, "Error\n", 6);
+			exit(1);
+		}
+		i++;
+	}
+}
 
 int	*treat_entry(char **entry, int args, int *numbers_size)
 {
 	char	**treated_entry;
 	int		*numbers;
 
-	if (ft_strlen(entry[1]) == 0)
-	{
-		write(2, "Error\n", 6);
-		exit(1);
-	}
+	is_empty_string(entry, args);
 	treated_entry = prepare_to_convert(entry, args);
 	*numbers_size = arraylen(treated_entry);
 	if (!is_convertible(treated_entry, *numbers_size))

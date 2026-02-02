@@ -1,18 +1,18 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_strjoin.c                                       :+:      :+:    :+:   */
+/*   ft_strnjoin_bonus.c                                :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: gmarinho <gmarinho@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2025/10/25 11:06:44 by gmarinho          #+#    #+#             */
-/*   Updated: 2026/01/31 18:41:39 by gmarinho         ###   ########.fr       */
+/*   Created: 2026/01/31 18:49:45 by gmarinho          #+#    #+#             */
+/*   Updated: 2026/02/02 18:43:25 by gmarinho         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "push_swap.h"
+#include "checker_bonus.h"
 
-char	*ft_strjoin(char *s1, char const *s2)
+char	*ft_strnjoin(char *s1, char const *s2, int n)
 {
 	char	*dest;
 	int		i;
@@ -23,18 +23,17 @@ char	*ft_strjoin(char *s1, char const *s2)
 		return (NULL);
 	len_s1 = ft_strlen(s1);
 	len_s2 = ft_strlen(s2);
+	if (len_s2 > n)
+		len_s2 = n + 1;
 	dest = (char *)malloc((len_s1 + len_s2 + 1) * sizeof(char));
 	if (!dest)
 		return (NULL);
 	i = -1;
 	while (++i < len_s1)
 		dest[i] = (char)s1[i];
-	i = 0;
-	while (i < len_s2)
-	{
+	i = -1;
+	while (++i < len_s2)
 		dest[len_s1 + i] = (char)s2[i];
-		i++;
-	}
 	dest[len_s1 + i] = '\0';
 	free(s1);
 	return (dest);

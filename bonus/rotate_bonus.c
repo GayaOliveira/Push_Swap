@@ -1,22 +1,24 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   rotate.c                                           :+:      :+:    :+:   */
+/*   rotate_bonus.c                                     :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: gabrieol <gabrieol@student.42.fr>          +#+  +:+       +#+        */
+/*   By: gmarinho <gmarinho@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2026/01/08 20:29:53 by gabrieol          #+#    #+#             */
-/*   Updated: 2026/02/02 15:03:32 by gabrieol         ###   ########.fr       */
+/*   Created: 2026/01/08 20:29:53 by gmarinho          #+#    #+#             */
+/*   Updated: 2026/02/02 18:43:25 by gmarinho         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "bonus.h"
+#include "checker_bonus.h"
 
 static void	rotate(t_stack **head)
 {
 	t_stack	*second_node;
 	t_stack	*last_node;
 
+	if (ft_lstsize(*head) <= 1)
+		return ;
 	second_node = (*head)->next;
 	last_node = ft_lstlast(*head);
 	second_node->prev = NULL;
@@ -31,14 +33,17 @@ void	rotate_x(t_stack **head_a, t_stack **head_b, char stack)
 	if (stack == 'a')
 	{
 		rotate(head_a);
+		write(1, "ra\n", 3);
 	}
 	else if (stack == 'b')
 	{
 		rotate(head_b);
+		write(1, "rb\n", 3);
 	}
 	else
 	{
 		rotate(head_a);
 		rotate(head_b);
+		write(1, "rr\n", 3);
 	}
 }

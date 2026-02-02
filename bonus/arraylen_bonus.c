@@ -1,26 +1,23 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   sort_list.c                                        :+:      :+:    :+:   */
+/*   arraylen_bonus.c                                   :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: gmarinho <gmarinho@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2026/01/21 20:00:08 by gmarinho          #+#    #+#             */
-/*   Updated: 2026/02/02 19:07:07 by gmarinho         ###   ########.fr       */
+/*   Created: 2026/01/10 18:11:17 by gmarinho          #+#    #+#             */
+/*   Updated: 2026/02/02 18:43:25 by gmarinho         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "push_swap.h"
+#include "checker_bonus.h"
 
-void	sort_list(int *numbers, int numbers_size, t_stack **a, t_stack **b)
+int	arraylen(char **arr)
 {
-	if (numbers_size == 2)
-		sort_2(numbers);
-	create_stack_a(a, numbers, numbers_size);
-	if (numbers_size == 3)
-	{
-		sort_3(a, b);
-		exit(0);
-	}
-	position_sort(a, b);
+	int	i;
+
+	i = 0;
+	while (arr[i] != NULL)
+		i++;
+	return (i);
 }

@@ -25,22 +25,21 @@ SRCS = push_swap.c ft_atol.c \
 
 SRCS_BONUS = bonus/checker_bonus.c \
 				bonus/clear_bonus.c \
-				bonus/get_command.c \
-				bonus/get_next_line.c \
-				bonus/get_next_line_utils.c \
-				bonus/ft_strncmp.c \
-				bonus/ft_atol.c \
-				bonus/ft_strdup.c bonus/ft_strlen.c \
-				bonus/ft_isdigit.c bonus/ft_memcpy.c \
-				bonus/ft_strjoin.c bonus/ft_split.c \
-				bonus/arraylen.c bonus/show_error.c \
-				bonus/validate_entry.c bonus/free_array.c \
-				bonus/get_index.c bonus/ft_lstadd_back.c \
-				bonus/ft_lstlast.c bonus/create_stack_a.c \
-				bonus/ft_lstclear.c bonus/ft_lstsize.c \
-				bonus/push.c bonus/swap.c bonus/rotate.c \
-				bonus/reverse_rotate.c \
-				bonus/treat_entry.c
+				bonus/get_command_bonus.c \
+				bonus/get_next_line_bonus.c \
+				bonus/ft_strncmp_bonus.c bonus/ft_strchr_bonus.c \
+				bonus/ft_atol_bonus.c bonus/ft_strnjoin_bonus.c \
+				bonus/ft_strdup_bonus.c bonus/ft_strlen_bonus.c \
+				bonus/ft_isdigit_bonus.c bonus/ft_memcpy_bonus.c \
+				bonus/ft_strjoin_bonus.c bonus/ft_split_bonus.c \
+				bonus/arraylen_bonus.c bonus/show_error_bonus.c \
+				bonus/validate_entry_bonus.c bonus/free_array_bonus.c \
+				bonus/get_index_bonus.c bonus/ft_lstadd_back_bonus.c \
+				bonus/ft_lstlast_bonus.c bonus/create_stack_a_bonus.c \
+				bonus/ft_lstclear_bonus.c bonus/ft_lstsize_bonus.c \
+				bonus/push_bonus.c bonus/swap_bonus.c bonus/rotate_bonus.c \
+				bonus/reverse_rotate_bonus.c \
+				bonus/treat_entry_bonus.c
 
 OBJS = $(SRCS:.c=.o)
 OBJS_BONUS = $(SRCS_BONUS:.c=.o)
@@ -60,7 +59,7 @@ clean:
 	rm -f $(OBJS) $(OBJS_BONUS)
 
 fclean:
-	rm -f $(NAME) $(OBJS) $(OBJS_BONUS) checker
+	rm -f $(NAME) $(NAME_BONUS) $(OBJS) $(OBJS_BONUS)
 
 re: fclean all
 

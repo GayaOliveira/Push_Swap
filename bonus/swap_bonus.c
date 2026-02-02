@@ -1,16 +1,16 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   swap.c                                             :+:      :+:    :+:   */
+/*   swap_bonus.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: gabrieol <gabrieol@student.42.fr>          +#+  +:+       +#+        */
+/*   By: gmarinho <gmarinho@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2026/01/21 20:00:08 by gabrieol          #+#    #+#             */
-/*   Updated: 2026/02/02 15:03:32 by gabrieol         ###   ########.fr       */
+/*   Created: 2026/01/21 20:00:08 by gmarinho          #+#    #+#             */
+/*   Updated: 2026/02/02 18:43:25 by gmarinho         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "bonus.h"
+#include "checker_bonus.h"
 
 static void	swap(t_stack **head)
 {
@@ -32,14 +32,17 @@ void	swap_x(t_stack **head_a, t_stack **head_b, char stack)
 	if (stack == 'a')
 	{
 		swap(head_a);
+		write(1, "sa\n", 3);
 	}
 	else if (stack == 'b')
 	{
 		swap(head_b);
+		write(1, "sb\n", 3);
 	}
 	else
 	{
 		swap(head_a);
 		swap(head_b);
+		write(1, "ss\n", 3);
 	}
 }
