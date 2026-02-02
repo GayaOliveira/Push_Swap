@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   rotate.c                                           :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: gmarinho <gmarinho@student.42.fr>          +#+  +:+       +#+        */
+/*   By: gabrieol <gabrieol@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/01/08 20:29:53 by gabrieol          #+#    #+#             */
-/*   Updated: 2026/01/31 17:25:05 by gmarinho         ###   ########.fr       */
+/*   Updated: 2026/02/02 15:03:32 by gabrieol         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -31,17 +31,14 @@ void	rotate_x(t_stack **head_a, t_stack **head_b, char stack)
 	if (stack == 'a')
 	{
 		rotate(head_a);
-		write(1, "ra\n", 3);
 	}
 	else if (stack == 'b')
 	{
 		rotate(head_b);
-		write(1, "rb\n", 3);
 	}
 	else
 	{
 		rotate(head_a);
 		rotate(head_b);
-		write(1, "rr\n", 3);
 	}
 }

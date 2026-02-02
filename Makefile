@@ -60,7 +60,7 @@ clean:
 	rm -f $(OBJS) $(OBJS_BONUS)
 
 fclean:
-	rm -f $(NAME) $(OBJS) $(OBJS_BONUS)
+	rm -f $(NAME) $(OBJS) $(OBJS_BONUS) checker
 
 re: fclean all
 

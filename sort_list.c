@@ -6,7 +6,7 @@
 /*   By: gabrieol <gabrieol@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/01/21 20:00:08 by gabrieol          #+#    #+#             */
-/*   Updated: 2026/01/30 16:27:29 by gabrieol         ###   ########.fr       */
+/*   Updated: 2026/02/02 14:59:12 by gabrieol         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -21,7 +21,7 @@ void	sort_list(int *numbers, int numbers_size, t_stack **a, t_stack **b)
 	if (numbers_size == 3)
 	{
 		sort_3(a, b);
-		exit(0);
+		return ;
 	}
 	position_sort(a, b);
 }

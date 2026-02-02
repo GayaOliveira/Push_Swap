@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   push.c                                             :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: gmarinho <gmarinho@student.42.fr>          +#+  +:+       +#+        */
+/*   By: gabrieol <gabrieol@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/01/21 20:00:08 by gabrieol          #+#    #+#             */
-/*   Updated: 2026/01/31 17:25:05 by gmarinho         ###   ########.fr       */
+/*   Updated: 2026/02/02 15:03:32 by gabrieol         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -42,11 +42,9 @@ void	push_x(t_stack **src, t_stack **dest, char stack)
 	if (stack == 'a')
 	{
 		push(dest, src);
-		write(1, "pa\n", 3);
 	}
 	else
 	{
 		push(src, dest);
-		write(1, "pb\n", 3);
 	}
 }
